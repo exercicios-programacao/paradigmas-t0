@@ -1,0 +1,16 @@
+# project configuration
+.exercicio_zero/project
+
+# patch files
+*.orig
+*.rej
+
+# generated files
+*.o
+tests/intarray
+tests/lsearch
+RESULT
+
+# test tools
+.coverage
+.tox
