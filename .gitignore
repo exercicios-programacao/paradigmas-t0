@@ -10,6 +10,9 @@
 examples/intarray
 examples/lsearch
 examples/genarray
+tests/SetValue
+tests/Insert
+tests/Remove
 RESULT
 
 # test tools
