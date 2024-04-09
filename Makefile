@@ -1,32 +1,24 @@
-tests = \
-	tests/lsearch \
-	tests/intarray \
-
-#	tests/genericarray \
-#	tests/doublearray \
-#	tests/strarray
+examples = \
+	lsearch \
+	intarray \
+	genarray
 
 CFLAGS = -I src
 
-all: $(tests)
+TARGETS = $(addprefix examples/, $(examples))
+
+all: $(TARGETS)
 
 clean:
-	$(RM) $(tests) tests/*.o src/*.o
+	$(RM) $(tests) examples/*.o src/*.o
 
 .PHONY: all clean
 
-tests/lsearch: tests/lsearch.o src/util.o
+examples/lsearch: examples/lsearch.o src/util.o
 	gcc -o $(@) $(^)
 
-tests/intarray: tests/intarray.o src/intarray.o
+examples/intarray: examples/intarray.o src/intarray.o
 	gcc -o $(@) $(^)
 
-tests/genericarray: tests/genericarray.o src/dynarray.o
+examples/genarray : examples/genarray.o src/genarray.o
 	gcc -o $(@) $(^)
-
-tests/doublearray: tests/doublearray.o src/dynarray.o
-	gcc -o $(@) $(^)
-
-tests/genarray: tests/strarray.o src/genarray.o
-	gcc -o $(@) $(^)
-

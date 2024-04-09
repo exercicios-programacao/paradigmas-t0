@@ -7,8 +7,9 @@
 
 # generated files
 *.o
-tests/intarray
-tests/lsearch
+examples/intarray
+examples/lsearch
+examples/genarray
 RESULT
 
 # test tools
