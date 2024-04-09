@@ -1,0 +1,49 @@
+# Copyright (c) 2024 Rafael Guterres Jeffman
+# See the file COPYING for license details.
+---
+name: Avaliação
+run-name: 
+on:
+  - push
+  - pull_request
+jobs:
+  run_tests:
+    name: Executa os testes de avaliação
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - run: |
+          make tests
+      # - name: Arquiva resultados
+      #   if: ${{ always() }}
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: homework_evaluation
+      #     path: RESULT
+      #     retention-days: 1
+  # report_result:
+  #   name: Resultados da avaliação
+  #   if: ${{ always() }}
+  #   needs: run_tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download a single artifact
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: homework_evaluation
+  #     - run: sed -n -e '$ ! p' RESULT
+  #       name: Resultado
+  # report_grade:
+  #  name: Previsão de nota final
+  #    if: ${{ always() }}
+  #   needs: run_tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download a single artifact
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: homework_evaluation
+  #     - run: sed -n -e '$ p' RESULT
+  #       name: Previsão de Nota
