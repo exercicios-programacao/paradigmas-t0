@@ -1,6 +1,10 @@
 /* SPDX-License-Identifer: MIT */
 
-#include <catch2/catch_test_macros.hpp>
+#if defined(GITHUB_WORKFLOW) && GITHUB_WORKFLOW == 1
+    #include <catch2/catch.hpp>
+#else
+    #include <catch2/catch_test_macros.hpp>
+#endif /* GITHUB_WORKFLOW */
 
 #include "genarray.h"
 

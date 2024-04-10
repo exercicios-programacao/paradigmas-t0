@@ -19,6 +19,9 @@ features/Remove
 
 # result file
 RESULT
+MEMTEST
+result.raw
+.result/
 
 # test tools
 .coverage
@@ -26,4 +29,7 @@ RESULT
 
 # editor files
 *.swp
+
+# temporary files
+out
 
