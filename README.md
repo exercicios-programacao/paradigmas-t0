@@ -7,7 +7,7 @@ Preparação para a execução do trabalho
 --------------------------------------
 
 Para iniciar este trabalho, faça um _fork_ do repositório 
-[https://github.com/exercicio_zero/paradigmas-T0](https://github.com/exercicio_zero/paradigmas-T0)
+[https://github.com/exercicios-programacao/paradigmas-T0](https://github.com/exercicio-programacao/paradigmas-T0)
 para o seu usuário do Github.
 
 Todo o código implementado deve estar dentro do diretório `src`. Siga as 
@@ -37,7 +37,7 @@ Entrega
 
 Para entregar o trabalho, faça commit do código, envie para o seu _fork_ no 
 Github, e abra um _pull request_ contra o
-[repositório original](https://github.com/exercicio_zero/paradigmas-T0).
+[repositório original](https://github.com/exercicios-programacao/paradigmas-t0).
 
 O título do _pull request_ deve conter o nome do aluno que o está criando. 
 Na mensagem deve constar o nome completo do autor do _pull request_, e de 
@@ -53,4 +53,4 @@ Discussões Online
 -----------------
 
 Dúvidas e disccussões sobre o trabalho podem ser realizadas utilizando as
-[discussões do Github](https://github.com/exercicio_zero/paradigmas-T0/discussions).
+[discussões do Github](https://github.com/exercicio-programacao/paradigmas-t0/discussions).
