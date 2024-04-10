@@ -57,6 +57,3 @@ void GenericArray_set(GenericArray* array, int n, void *d)
 	memcpy(elem_addr, d, array->elem_size);
 }
 
-
-
-
