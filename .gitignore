@@ -7,12 +7,17 @@
 
 # generated files
 *.o
+*.opp
+
+# executables
 examples/intarray
 examples/lsearch
 examples/genarray
 tests/SetValue
 tests/Insert
 tests/Remove
+
+# result file
 RESULT
 
 # test tools
