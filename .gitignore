@@ -13,9 +13,9 @@
 examples/intarray
 examples/lsearch
 examples/genarray
-tests/SetValue
-tests/Insert
-tests/Remove
+features/SetValue
+features/Insert
+features/Remove
 
 # result file
 RESULT
@@ -23,3 +23,7 @@ RESULT
 # test tools
 .coverage
 .tox
+
+# editor files
+*.swp
+
