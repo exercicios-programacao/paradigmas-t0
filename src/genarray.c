@@ -50,3 +50,13 @@ void GenericArray_get(GenericArray *array, int index, void *elem)
     memcpy(elem, elem_addr, array->elem_size);
 }
 
+void GenericArray_set(GenericArray* array, int n, void *d)
+{
+	assert(n >= 0 || n < GenericArray_size(array));
+	void *elem_addr = (char*)array->data + n * array->elem_size;
+	memcpy(elem_addr, d, array->elem_size);
+}
+
+
+
+
