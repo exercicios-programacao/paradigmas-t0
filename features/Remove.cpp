@@ -12,9 +12,9 @@ SCENARIO("Remover valores num array.", "[Remove]") {
         for (int i=0; i < 5; i++) {
             GenericArray_append(&array, &i);
         }
-        int original_size = GenericArray_size(&array);
 
         WHEN ("Removerum o último elemento") {
+	    int original_size = GenericArray_size(&array);
             GenericArray_remove(&array, original_size - 1);
 
             THEN("O tamanho do array foi reduzido em um elemento.") {
@@ -30,10 +30,11 @@ SCENARIO("Remover valores num array.", "[Remove]") {
         }
         
         WHEN ("Remover o primeiro elemento") {
+	    int original_size = GenericArray_size(&array);
             GenericArray_remove(&array, 0);
 
             THEN("O tamanho do array foi reduzido em um elemento.") {
-                REQUIRE(original_size - 2 == GenericArray_size(&array));
+                REQUIRE(original_size - 1 == GenericArray_size(&array));
             }
             THEN("Os valores existentes continuam válidos.") {
                 for (int i = 0; i < GenericArray_size(&array); i++) {
