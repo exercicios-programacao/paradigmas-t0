@@ -50,10 +50,33 @@ void GenericArray_get(GenericArray *array, int index, void *elem)
     memcpy(elem, elem_addr, array->elem_size);
 }
 
-void GenericArray_set(GenericArray* array, int n, void *d)
-{
-	assert(n >= 0 || n < GenericArray_size(array));
-	void *elem_addr = (char*)array->data + n * array->elem_size;
-	memcpy(elem_addr, d, array->elem_size);
+void GenericArray_set(GenericArray* array, int index, void *value) {
+    assert(0 <= index && index < array->size);
+    void *elem_addr = (char*)array->data + index * array->elem_size;
+    memcpy(elem_addr, value, array->elem_size);
 }
 
+void GenericArray_insert(GenericArray *array, int index, void* value) {
+    assert(index >= 0 && index <= array->size);
+    GenericArray_ensureCapacity(array, array->size + 1);
+    void *elem_addr = (char*)array->data + index * array->elem_size;
+    memmove(
+        (char*)elem_addr + array->elem_size,
+        elem_addr,
+        (array->size - index) * array->elem_size
+    );
+    memcpy(elem_addr, value, array->elem_size);
+    array->size += 1;
+}
+
+void GenericArray_remove(GenericArray *array, int index) {
+    if (index >= 0 && index < array->size) {
+        void *elem_addr = (char*)array->data + index * array->elem_size;
+        memmove(
+            elem_addr,
+            (char*)elem_addr + array->elem_size,
+            (array->size - index) * array->elem_size
+        );
+        array->size -= 1;
+    }
+}
