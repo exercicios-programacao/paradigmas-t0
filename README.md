@@ -28,6 +28,8 @@ Você precisará dos seguintes softwares instalados:
 Desenvolvimento
 ---------------
 
+Para compilar o projeto utilize o comando `make -k`.
+
 Durante o desenvolvimento do trabalho, você pode executar os testes, 
 localmente, utilizando os comandos `make test` ou `make memtest`.
 
